@@ -97,7 +97,7 @@ jobs:
           #- os: macos-latest
           #  asset_path: build/ftxui*Darwin*
           - os: windows-latest
-            asset_path: build/ftxui*Win32*
+            asset_path: build/ftxui*Win64*
     runs-on: ${{ matrix.os }}
     steps:
       - name: "Checkout repository"
