@@ -112,7 +112,7 @@ jobs:
           cd build;
           cmake ..
           -DCMAKE_BUILD_TYPE=Release
-          -DCMAKE_GENERATOR_PLATFORM=x86
+          -DCMAKE_GENERATOR_PLATFORM=WIN32
           -DFTXUI_BUILD_DOCS=OFF
           -DFTXUI_BUILD_EXAMPLES=OFF
           -DFTXUI_BUILD_TESTS=OFF
