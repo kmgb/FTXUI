@@ -17,20 +17,20 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: Linux GCC
-            os: ubuntu-latest
-            compiler: g++-9
-            test: true
+#           - name: Linux GCC
+#             os: ubuntu-latest
+#             compiler: g++-9
+#             test: true
 
-          - name: Linux Clang
-            os: ubuntu-latest
-            compiler: clang++
-            test: true
+#           - name: Linux Clang
+#             os: ubuntu-latest
+#             compiler: clang++
+#             test: true
 
-          - name: MacOS clang
-            os: macos-latest
-            compiler: clang++
-            test: true
+#           - name: MacOS clang
+#             os: macos-latest
+#             compiler: clang++
+#             test: true
 
           - name: Windows MSVC
             os: windows-latest
@@ -92,12 +92,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-latest
-            asset_path: build/ftxui*Linux*
-          - os: macos-latest
-            asset_path: build/ftxui*Darwin*
+          #- os: ubuntu-latest
+          #  asset_path: build/ftxui*Linux*
+          #- os: macos-latest
+          #  asset_path: build/ftxui*Darwin*
           - os: windows-latest
-            asset_path: build/ftxui*Win64*
+            asset_path: build/ftxui*Win32*
     runs-on: ${{ matrix.os }}
     steps:
       - name: "Checkout repository"
@@ -112,6 +112,7 @@ jobs:
           cd build;
           cmake ..
           -DCMAKE_BUILD_TYPE=Release
+          -DCMAKE_GENERATOR_PLATFORM=x86
           -DFTXUI_BUILD_DOCS=OFF
           -DFTXUI_BUILD_EXAMPLES=OFF
           -DFTXUI_BUILD_TESTS=OFF
